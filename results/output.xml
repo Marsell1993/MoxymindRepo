@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-22T17:48:41.649318" rpa="false" schemaversion="5">
+<suite id="s1" name="Moxymind" source="C:\Users\Verčimák Marcel\Documents\WORK\Moxymind">
+<suite id="s1-s1" name="Api Tests" source="C:\Users\Verčimák Marcel\Documents\WORK\Moxymind\api_tests.robot">
+<test id="s1-s1-t1" name="Get_List_Users" line="14">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-05-22T17:48:42.053081" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-05-22T17:48:42.053081" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 22 May 2024 15:48:40 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1716210324&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=ZR0bY2UnRu5os6uq%2F%2Fzlin5GVym0Mbzlds6RAcnBBek%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1716210324&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=ZR0bY2UnRu5os6uq%2F%2Fzlin5GVym0Mbzlds6RAcnBBek%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '152', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '887df3a888745ac3-VIE', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-05-22T17:48:42.054082" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url=${mainURL}/api/users?page=2</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-05-22T17:48:41.979024" elapsed="0.075058"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.055082" level="INFO">Status code: 200</msg>
+<arg>Status code: ${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.055082" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.056084" level="INFO">Response: {"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.056084" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.057085" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.056084" elapsed="0.001001"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.057085" level="INFO">${response_json} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<var>${response_json}</var>
+<arg>json.loads('''${response.content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.057085" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-05-22T17:48:42.058086" level="INFO">False</msg>
+<arg>${response_json}</arg>
+<arg>total</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.058086" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-05-22T17:48:42.058086" level="INFO">${total} = 12</msg>
+<var>${total}</var>
+<arg>${response_json}</arg>
+<arg>total</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.058086" elapsed="0.001001"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-05-22T17:48:42.059087" level="INFO">${data} = [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}, {'id': 8, 'email': 'lindsay.ferguson@reqres.in', '...</msg>
+<var>${data}</var>
+<arg>${response_json}</arg>
+<arg>data</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.059087" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.059087" level="INFO">Length is 6.</msg>
+<msg time="2024-05-22T17:48:42.060087" level="INFO">${users_count} = 6</msg>
+<var>${users_count}</var>
+<arg>${data}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.059087" elapsed="0.001000"/>
+</kw>
+<kw name="Should Not Be Equal As Numbers" owner="BuiltIn">
+<arg>${users_count}</arg>
+<arg>${total}</arg>
+<doc>Fails if objects are equal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.060087" elapsed="0.000000"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-05-22T17:48:42.061088" level="INFO">${first_user} = {'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}</msg>
+<var>${first_user}</var>
+<arg>${data}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.060087" elapsed="0.001001"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-05-22T17:48:42.061088" level="INFO">${second_user} = {'id': 8, 'email': 'lindsay.ferguson@reqres.in', 'first_name': 'Lindsay', 'last_name': 'Ferguson', 'avatar': 'https://reqres.in/img/faces/8-image.jpg'}</msg>
+<var>${second_user}</var>
+<arg>${data}</arg>
+<arg>1</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.061088" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-05-22T17:48:42.062089" level="INFO">False</msg>
+<arg>${first_user}</arg>
+<arg>last_name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.061088" elapsed="0.001001"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-05-22T17:48:42.062089" level="INFO">False</msg>
+<arg>${second_user}</arg>
+<arg>last_name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.062089" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.063090" level="INFO">First user's last name: Lawson</msg>
+<arg>First user's last name: ${first_user['last_name']}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.062089" elapsed="0.001001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.064091" level="INFO">Second user's last name: Ferguson</msg>
+<arg>Second user's last name: ${second_user['last_name']}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.063090" elapsed="0.001001"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-05-22T17:48:42.064091" level="INFO">${email} = michael.lawson@reqres.in</msg>
+<var>${email}</var>
+<arg>${user}</arg>
+<arg>email</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-05-22T17:48:42.064091" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2024-05-22T17:48:42.065092" level="FAIL">Evaluating expression 'michael.lawson@reqres.in == str(michael.lawson@reqres.in)' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<arg>${email} == str(${email})</arg>
+<arg>Employee email should be a string</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2024-05-22T17:48:42.065092" elapsed="0.000000">Evaluating expression 'michael.lawson@reqres.in == str(michael.lawson@reqres.in)' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</kw>
+<var name="${user}">{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces/7-image.jpg'}</var>
+<status status="FAIL" start="2024-05-22T17:48:42.064091" elapsed="0.001001">Evaluating expression 'michael.lawson@reqres.in == str(michael.lawson@reqres.in)' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</iter>
+<var>${user}</var>
+<value>@{data}</value>
+<status status="FAIL" start="2024-05-22T17:48:42.064091" elapsed="0.001001">Evaluating expression 'michael.lawson@reqres.in == str(michael.lawson@reqres.in)' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</for>
+<doc>Positive GET</doc>
+<status status="FAIL" start="2024-05-22T17:48:41.978023" elapsed="0.088069">Evaluating expression 'michael.lawson@reqres.in == str(michael.lawson@reqres.in)' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+</test>
+<status status="FAIL" start="2024-05-22T17:48:41.667334" elapsed="0.399760"/>
+</suite>
+<status status="FAIL" start="2024-05-22T17:48:41.652686" elapsed="0.415408"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Moxymind">Moxymind</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Api Tests">Moxymind.Api Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
